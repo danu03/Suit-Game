@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baseColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.mainmenu.MainMenuFragment">
+
+    <TextView
+        android:id="@+id/txt_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin80"
+        android:fontFamily="@font/comicbd"
+        android:text="@string/pilih_lawanmu"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_vs_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:fontFamily="@font/comicbd"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="@string/vs_pemain"
+        app:layout_constraintEnd_toEndOf="@+id/image_vs_player"
+        app:layout_constraintStart_toStartOf="@+id/image_vs_player"
+        app:layout_constraintTop_toBottomOf="@+id/image_vs_player" />
+
+    <TextView
+        android:id="@+id/tv_vs_comp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:fontFamily="@font/comicbd"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:text="@string/vs_cpu"
+        app:layout_constraintEnd_toEndOf="@+id/image_vs_comp"
+        app:layout_constraintStart_toStartOf="@+id/image_vs_comp"
+        app:layout_constraintTop_toBottomOf="@+id/image_vs_comp" />
+
+    <ImageView
+        android:id="@+id/image_vs_player"
+        android:layout_width="@dimen/layout200"
+        android:layout_height="@dimen/layout150"
+        android:layout_marginTop="@dimen/margin30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_profile" />
+
+    <ImageView
+        android:id="@+id/image_vs_comp"
+        android:layout_width="@dimen/layout200"
+        android:layout_height="@dimen/layout150"
+        android:layout_marginTop="@dimen/margin50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vs_player" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="@dimen/margin50"
+        android:layout_height="@dimen/margin50"
+        android:layout_marginTop="@dimen/margin8"
+        android:layout_marginEnd="@dimen/margin8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

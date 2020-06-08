@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Suit Game</string>
+    <string name="pemain_1">Pemain 1</string>
+    <string name="computer">COM</string>
+    <string name="batu">Batu</string>
+    <string name="kertas">Kertas</string>
+    <string name="gunting">Gunting</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_landing1">Bermain suit melawan sesama \npemain.</string>
+    <string name="text_landing2">Bermain suit melawan komputer</string>
+    <string name="text_landing3">Persiapkan dirimu!</string>
+    <string name="pemain_2">Pemain 2</string>
+    <string name="cpu">CPU</string>
+    <string name="password"> Password</string>
+    <string name="email">Email</string>
+    <string name="reset">Reset</string>
+    <string name="login">Login</string>
+    <string name="pilih_lawanmu">PILIH LAWANMU</string>
+    <string name="vs_pemain">vs Pemain</string>
+    <string name="vs_cpu">vs CPU</string>
+    <string name="username">Username</string>
+    <string name="history">HISTORY BATTLE</string>
+    <string name="profile">DATA PROFILE</string>
+    <string name="register">Register</string>
+    <string name="save_battle">SAVE BATTLE</string>
+    <string name="empty_data">Data Masih Kosong</string>
+    <string name="exit">Keluar Aplikasi</string>
+    <string name="logout">Logout</string>
+    <string name="edit">Edit</string>
+    <string name="data_profile">DATA PROFILE</string>
+    <string name="save">Simpan</string>
+    <string name="save_battle1">Save Battle</string>
+    <string name="player_2">Player 2</string>
+    <string name="vs">VS</string>
+</resources>

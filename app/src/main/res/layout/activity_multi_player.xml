@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baseColor"
+    tools:context=".ui.multiplayer.view.MultiPlayerActivity">
+
+    <ImageView
+        android:id="@+id/iv_title"
+        android:layout_width="@dimen/layout200"
+        android:layout_height="@dimen/layout140"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tittle" />
+
+    <TextView
+        android:id="@+id/tv_player"
+        android:layout_width="@dimen/layout150"
+        android:layout_height="@dimen/layout40"
+        android:layout_marginStart="@dimen/margin30"
+        android:layout_marginTop="@dimen/margin10"
+        android:text="@string/pemain_1"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        android:fontFamily="@font/comicbd"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_title" />
+
+    <ImageView
+        android:id="@+id/iv_batu1"
+        android:layout_width="@dimen/layout100"
+        android:layout_height="@dimen/layout100"
+        android:layout_marginStart="@dimen/margin30"
+        android:layout_marginTop="@dimen/margin10"
+        android:padding="@dimen/padding5"
+        android:contentDescription="@string/batu"
+        android:src="@drawable/batu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player" />
+
+    <ImageView
+        android:id="@+id/iv_kertas1"
+        android:layout_width="@dimen/layout100"
+        android:layout_height="@dimen/layout100"
+        android:layout_marginStart="@dimen/margin30"
+        android:layout_marginTop="@dimen/margin20"
+        android:contentDescription="@string/kertas"
+        android:padding="@dimen/padding5"
+        android:src="@drawable/kertas"
+        app:layout_constraintEnd_toEndOf="@+id/iv_batu1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_batu1" />
+
+    <ImageView
+        android:id="@+id/iv_gunting1"
+        android:layout_width="@dimen/layout100"
+        android:layout_height="@dimen/layout100"
+        android:layout_marginStart="@dimen/margin30"
+        android:layout_marginTop="@dimen/margin20"
+        android:contentDescription="@string/gunting"
+        android:padding="@dimen/padding5"
+        android:src="@drawable/gunting"
+        app:layout_constraintEnd_toEndOf="@+id/iv_kertas1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_kertas1" />
+
+    <TextView
+        android:id="@+id/tv_player2"
+        android:layout_width="@dimen/layout150"
+        android:layout_height="@dimen/layout40"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/comicbd"
+        android:text="@string/player_2"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_batu2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_title" />
+
+    <ImageView
+        android:id="@+id/iv_batu2"
+        android:layout_width="@dimen/layout100"
+        android:layout_height="@dimen/layout100"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginEnd="@dimen/margin30"
+        android:padding="@dimen/padding5"
+        android:contentDescription="@string/batu"
+        android:src="@drawable/batu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player2" />
+
+    <ImageView
+        android:id="@+id/iv_kertas2"
+        android:layout_width="@dimen/layout100"
+        android:layout_height="@dimen/layout100"
+        android:layout_marginTop="@dimen/margin20"
+        android:layout_marginEnd="@dimen/margin30"
+        android:contentDescription="@string/kertas"
+        android:padding="@dimen/padding5"
+        android:src="@drawable/kertas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_batu2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_batu2" />
+
+    <ImageView
+        android:id="@+id/iv_gunting2"
+        android:layout_width="@dimen/layout100"
+        android:layout_height="@dimen/layout100"
+        android:layout_marginTop="@dimen/margin20"
+        android:layout_marginEnd="@dimen/margin30"
+        android:contentDescription="@string/gunting"
+        android:padding="@dimen/padding5"
+        android:src="@drawable/gunting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_kertas2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_kertas2" />
+
+    <ImageView
+        android:id="@+id/iv_reset"
+        android:layout_width="@dimen/layout60"
+        android:layout_height="@dimen/layout60"
+        android:layout_marginEnd="@dimen/margin10"
+        android:layout_marginBottom="@dimen/margin10"
+        android:src="@drawable/refresh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/iv_win"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin180"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:fontFamily="@font/comicbd"
+        android:rotation="-20"
+        android:text="@string/vs"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_kertas2"
+        app:layout_constraintStart_toEndOf="@+id/iv_kertas1"
+        app:layout_constraintTop_toBottomOf="@+id/iv_title" />
+
+    <ImageView
+        android:id="@+id/iv_favorite"
+        android:layout_width="@dimen/layout60"
+        android:layout_height="@dimen/layout60"
+        android:layout_marginStart="@dimen/margin10"
+        android:layout_marginBottom="@dimen/margin10"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_save" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
