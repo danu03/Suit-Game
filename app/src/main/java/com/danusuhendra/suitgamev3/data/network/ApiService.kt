@@ -34,16 +34,16 @@ interface ApiService {
     suspend fun userAuth(@Header("Authorization") token: String): Response<ResponseAuthMe>
 
     @GET(USER_UPDATE)
-    fun getUser(@Header("Authorization") token: String): Call<ResponseUsers>
+    suspend fun getUser(@Header("Authorization") token: String): Response<ResponseUsers>
 
     @Multipart
     @PUT(USER_UPDATE)
-    fun updateUser(
+    suspend fun updateUser(
         @Header("Authorization") token: String,
         @Part("username") username: RequestBody,
         @Part("email") email: RequestBody,
         @Part file: MultipartBody.Part
-    ): Call<ResponseUsers>
+    ): Response<ResponseUsers>
 
     @POST(BATTLE)
     suspend fun postBattle(

@@ -90,6 +90,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
     override fun hideLoading() {
         pb_login.visibility = View.GONE
+
     }
 
     override fun showLoading() {

@@ -70,12 +70,12 @@ class MainMenuFragment : Fragment() {
             .into(image_vs_comp)
 
         image_vs_comp.setOnClickListener {
-            val intent = Intent(context, MultiPlayerActivity::class.java)
+            val intent = Intent(context, SinglePlayerActivity::class.java)
             startActivity(intent)
         }
 
         image_vs_player.setOnClickListener {
-            val intent = Intent(context, SinglePlayerActivity::class.java)
+            val intent = Intent(context, MultiPlayerActivity::class.java)
             startActivity(intent)
         }
     }

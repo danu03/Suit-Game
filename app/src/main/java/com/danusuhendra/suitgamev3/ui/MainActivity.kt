@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.danusuhendra.suitgamev3.R
 import com.danusuhendra.suitgamev3.ui.history.view.HistoryFragment
 import com.danusuhendra.suitgamev3.ui.mainmenu.MainMenuFragment
-import com.danusuhendra.suitgamev3.ui.profile.ProfileFragment
+import com.danusuhendra.suitgamev3.ui.profile.view.ProfileFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

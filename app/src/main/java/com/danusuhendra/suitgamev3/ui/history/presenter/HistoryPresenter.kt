@@ -19,6 +19,7 @@ class HistoryPresenter(private val repository: BattleRepository) : HistoryPresen
             repository.getBattle(token, {
                 if (it.size == 0) {
                     view.historyEmpty()
+                    view.hideLoading()
                 }else{
                     view.showHistory(it)
                     view.hideLoading()

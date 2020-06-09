@@ -32,23 +32,26 @@ class MultiPlayerPresenter(private val repository: BattleRepository) : MultiPlay
             multiPlayer.player == playerChoose[2] && multiPlayer.player2 == playerChoose[5]
         ) {
             view.getResult("DRAW")
+            view.postResult("Draw")
             Log.d("Hasil ", "DRAW!")
         } else if (multiPlayer.player == playerChoose[0] && multiPlayer.player2 == playerChoose[5] ||
             multiPlayer.player == playerChoose[1] && multiPlayer.player2 == playerChoose[3] ||
             multiPlayer.player == playerChoose[2] && multiPlayer.player2 == playerChoose[4]
         ) {
             view.getResult("PEMAIN 2 \nMENANG!")
+            view.postResult("Opponent Win")
             Log.d("Hasil ", "PEMAIN 2 MENANG!")
         } else if (multiPlayer.player == playerChoose[0] && multiPlayer.player2 == playerChoose[4] ||
             multiPlayer.player == playerChoose[1] && multiPlayer.player2 == playerChoose[5] ||
             multiPlayer.player == playerChoose[2] && multiPlayer.player2 == playerChoose[3]
         ) {
             view.getResult("${multiPlayer.playerName} \nMENANG!")
+            view.postResult("Player Win")
             Log.d("Hasil ", "${multiPlayer.playerName} MEMANG!!")
         }
     }
 
-    override fun postBattle(token: String, result: String) {
+    override fun postBattle(result: String, token : String) {
         GlobalScope.launch(Dispatchers.Main) {
             val mode = "Multiplayer"
             val battle = BodyBattle(mode, result)

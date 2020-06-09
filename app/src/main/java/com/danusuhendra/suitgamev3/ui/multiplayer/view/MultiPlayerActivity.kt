@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.lifecycle.lifecycleScope
 import com.danusuhendra.suitgamev3.BaseApplication
 import com.danusuhendra.suitgamev3.R
 import com.danusuhendra.suitgamev3.data.database.model.SaveBattle
@@ -15,7 +14,6 @@ import com.danusuhendra.suitgamev3.data.prefs.PreferenceHelper
 import com.danusuhendra.suitgamev3.repository.SaveBattleRepository
 import com.danusuhendra.suitgamev3.ui.multiplayer.model.MultiPlayer
 import com.danusuhendra.suitgamev3.ui.multiplayer.presenter.MultiPlayerPresenter
-import com.danusuhendra.suitgamev3.ui.singleplayer.presenter.SinglePlayerPresenter
 import kotlinx.android.synthetic.main.activity_multi_player.*
 import kotlinx.android.synthetic.main.activity_multi_player.iv_batu1
 import kotlinx.android.synthetic.main.activity_multi_player.iv_batu2
@@ -26,7 +24,6 @@ import kotlinx.android.synthetic.main.activity_multi_player.iv_kertas1
 import kotlinx.android.synthetic.main.activity_multi_player.iv_kertas2
 import kotlinx.android.synthetic.main.activity_multi_player.iv_reset
 import kotlinx.android.synthetic.main.activity_multi_player.iv_win
-import kotlinx.android.synthetic.main.activity_single_player.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -78,7 +75,7 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
                 if (state) {
                     val playerName = tv_player.text.toString()
                     it.background = getDrawable(R.drawable.select)
-                    Log.d("$playerName", suit.contentDescription.toString())
+                    Log.d(playerName, suit.contentDescription.toString())
                     player1 = suit.id.toString().toInt()
                     state = false
                 } else {
@@ -134,15 +131,9 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
             text = result
             setTextColor(Color.parseColor("#FFFFFF"))
             if (result == "DRAW") {
-                presenter.postBattle(token, "Draw")
                 textSize = 35f
                 setBackgroundColor(Color.parseColor("#5426eb"))
-            } else if (result == "PEMAIN 2 \nMENANG!") {
-                presenter.postBattle(token, "Opponent Win")
-                textSize = 25f
-                setBackgroundColor(Color.parseColor("#3feb48"))
             } else {
-                presenter.postBattle(token, "Player Win")
                 textSize = 25f
                 setBackgroundColor(Color.parseColor("#3feb48"))
             }
@@ -151,9 +142,9 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
     }
 
     override fun reset() {
-        val bgreset =
+        val bgReset =
             listOf(iv_batu1, iv_batu2, iv_gunting1, iv_gunting2, iv_kertas1, iv_kertas2, iv_win)
-        for (reset in bgreset) {
+        for (reset in bgReset) {
             reset.background = getDrawable(android.R.color.transparent)
             iv_win.setTextColor(Color.parseColor("#cc0000"))
             iv_win.text = "VS"
@@ -169,7 +160,7 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
     }
 
     override fun getSaveBattle(userId: String) {
-        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale(localClassName))
+        val sdf = SimpleDateFormat("MM/dd/yyyy", Locale(localClassName))
         val date = sdf.format(Date())
         val saveBattle = SaveBattle(
             null, userId, date, "Multi Player" ,iv_win.text.toString().replace(Regex("\n"), " ")
@@ -183,6 +174,10 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
         GlobalScope.launch(Dispatchers.Main) {
             saveBattleRepository.getLatestSaveBattle(userId)
         }
+    }
+
+    override fun postResult(result: String) {
+        presenter.postBattle(result, token)
     }
 
     override fun onSupportNavigateUp(): Boolean {

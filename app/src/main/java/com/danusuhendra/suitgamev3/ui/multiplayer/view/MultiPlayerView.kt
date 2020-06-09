@@ -5,4 +5,5 @@ interface MultiPlayerView {
     fun reset()
     fun getSaveBattle(userId : String)
     fun deleteSaveBattle(userId: String)
+    fun postResult(result: String)
 }

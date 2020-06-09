@@ -38,23 +38,27 @@ class SinglePlayerPresenter(private val repository: BattleRepository) : SinglePl
             singlePlayer.player == playerChoose[2] && singlePlayer.comp == playerChoose[5]
         ) {
             view.getResult("DRAW")
+            view.postResult("Draw")
             Log.d("Hasil ", "DRAW!")
+
         } else if (singlePlayer.player == playerChoose[0] && singlePlayer.comp == playerChoose[5] ||
             singlePlayer.player == playerChoose[1] && singlePlayer.comp == playerChoose[3] ||
             singlePlayer.player == playerChoose[2] && singlePlayer.comp == playerChoose[4]
         ) {
             view.getResult("CPU \nMENANG!" )
+            view.postResult("Opponent Win")
             Log.d("Hasil ", "CPU MENANG!")
         } else if (singlePlayer.player == playerChoose[0] && singlePlayer.comp == playerChoose[4] ||
             singlePlayer.player == playerChoose[1] && singlePlayer.comp == playerChoose[5] ||
             singlePlayer.player == playerChoose[2] && singlePlayer.comp == playerChoose[3]
         ) {
             view.getResult("${singlePlayer.playerName} \nMENANG!")
+            view.postResult("Player Win")
             Log.d("Hasil ", "${singlePlayer.playerName} MEMANG!!")
         }
     }
 
-    override fun postBattle(token: String, result : String) {
+    override fun postBattle(result : String, token : String) {
         GlobalScope.launch(Dispatchers.Main) {
             val mode = "Singleplayer"
             val battle = BodyBattle(mode, result)

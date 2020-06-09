@@ -36,7 +36,7 @@ class HistoryAdapter(private val listHistory : MutableList<DataGetBattle>) : Rec
         private fun String.parseDate() : String{
             val inputFormat =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.UK)
             val date = inputFormat.parse(this)
-            val outputFormat = SimpleDateFormat("dd/MM/yyyy", Locale("ID"))
+            val outputFormat = SimpleDateFormat("MM/dd/yyyy", Locale("ID"))
             return outputFormat.format(date)
         }
     }

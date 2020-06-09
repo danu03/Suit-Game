@@ -119,15 +119,9 @@ class SinglePlayerActivity : AppCompatActivity(), SinglePlayerView {
             text = result
             setTextColor(Color.parseColor("#FFFFFF"))
             if (result == "DRAW") {
-                presenter.postBattle(token, "Draw")
                 textSize = 35f
                 setBackgroundColor(Color.parseColor("#5426eb"))
-            } else if (result == "CPU \nMENANG!") {
-                presenter.postBattle(token, "Opponent Win")
-                textSize = 25f
-                setBackgroundColor(Color.parseColor("#3feb48"))
             }else {
-                presenter.postBattle(token, "Player Win")
                 textSize = 25f
                 setBackgroundColor(Color.parseColor("#3feb48"))
             }
@@ -153,7 +147,7 @@ class SinglePlayerActivity : AppCompatActivity(), SinglePlayerView {
     }
 
     override fun getSaveBattle(userId: String) {
-        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale(localClassName))
+        val sdf = SimpleDateFormat("MM/dd/yyyy", Locale(localClassName))
         val date = sdf.format(Date())
         val saveBattle = SaveBattle(
             null, userId, date, "Single Player", iv_win.text.toString().replace(Regex("\n"), " ")
@@ -167,6 +161,10 @@ class SinglePlayerActivity : AppCompatActivity(), SinglePlayerView {
         GlobalScope.launch(Dispatchers.Main) {
             saveBattleRepository.getLatestSaveBattle(userId)
         }
+    }
+
+    override fun postResult(result: String) {
+        presenter.postBattle(result, token)
     }
 
     override fun onSupportNavigateUp(): Boolean {
