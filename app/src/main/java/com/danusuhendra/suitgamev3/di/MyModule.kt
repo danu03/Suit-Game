@@ -3,7 +3,6 @@ package com.danusuhendra.suitgamev3.di
 import android.content.Context
 import androidx.room.Room
 import com.danusuhendra.suitgamev3.data.database.AppDatabase
-import com.danusuhendra.suitgamev3.data.database.SaveDataDao
 import com.danusuhendra.suitgamev3.data.network.ApiResource
 import com.danusuhendra.suitgamev3.data.network.ApiService
 import com.danusuhendra.suitgamev3.data.prefs.PreferenceHelper

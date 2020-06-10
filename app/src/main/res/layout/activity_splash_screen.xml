@@ -29,7 +29,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
-        android:id="@+id/imageView3"
         android:layout_width="@dimen/layout120"
         android:layout_height="@dimen/layout120"
         android:src="@drawable/gunting"
@@ -38,7 +37,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
-        android:id="@+id/imageView4"
         android:layout_width="@dimen/layout120"
         android:layout_height="@dimen/layout120"
         android:src="@drawable/kertas"

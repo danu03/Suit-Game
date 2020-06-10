@@ -53,7 +53,6 @@ class EditProfilePresenter(private val profileRepository: ProfileRepository) :
                 )
                 view.hideLoading()
             }, {
-
                 view.tokenExpired(it)
                 view.hideLoading()
             }, {

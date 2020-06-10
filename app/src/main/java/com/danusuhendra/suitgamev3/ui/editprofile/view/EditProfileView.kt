@@ -1,7 +1,5 @@
 package com.danusuhendra.suitgamev3.ui.editprofile.view
 
-import android.net.Uri
-
 interface EditProfileView {
     fun showLoading()
     fun hideLoading()

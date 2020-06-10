@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class MultiPlayerPresenter(private val repository: BattleRepository) : MultiPlayerPresenterInterface {
     private lateinit var view : MultiPlayerView
 
-    private val playerChoose = mutableListOf<Int>(
+    private val playerChoose = mutableListOf(
         R.id.iv_batu1,
         R.id.iv_gunting1,
         R.id.iv_kertas1,
@@ -55,7 +55,9 @@ class MultiPlayerPresenter(private val repository: BattleRepository) : MultiPlay
         GlobalScope.launch(Dispatchers.Main) {
             val mode = "Multiplayer"
             val battle = BodyBattle(mode, result)
-            repository.postBattle(battle, token)
+            repository.postBattle(battle, token) {
+                view.tokenExpired(it)
+            }
         }
     }
 }

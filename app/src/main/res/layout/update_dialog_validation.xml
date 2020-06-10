@@ -18,12 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin16"
         android:layout_marginBottom="@dimen/margin30"
-        android:text="Data sudah fix diupdate ?"
+        android:text="@string/fix_data"
         android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

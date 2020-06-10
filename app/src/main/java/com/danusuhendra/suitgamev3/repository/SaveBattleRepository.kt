@@ -4,7 +4,7 @@ import com.danusuhendra.suitgamev3.data.database.AppDatabase
 import com.danusuhendra.suitgamev3.data.database.SaveDataDao
 import com.danusuhendra.suitgamev3.data.database.model.SaveBattle
 
-class SaveBattleRepository(private val appDatabase: AppDatabase) {
+class SaveBattleRepository(appDatabase: AppDatabase) {
     private var saveDataDao: SaveDataDao = appDatabase.saveDataDao()
 
     suspend fun getSaveByUserId(userId : String, onGetSaveBattle : (MutableList<SaveBattle>) -> Unit) {

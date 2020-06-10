@@ -2,19 +2,18 @@ package com.danusuhendra.suitgamev3.ui.register.view
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.danusuhendra.suitgamev3.BaseApplication
 import com.danusuhendra.suitgamev3.R
 import com.danusuhendra.suitgamev3.data.network.ApiResource
 import com.danusuhendra.suitgamev3.data.network.model.users.response.ResponseUsers
 import com.danusuhendra.suitgamev3.repository.AuthRepository
-import com.danusuhendra.suitgamev3.ui.login.presenter.LoginPresenter
 import com.danusuhendra.suitgamev3.ui.login.view.LoginActivity
 import com.danusuhendra.suitgamev3.ui.register.presenter.RegisterPresenter
 import com.google.android.material.snackbar.Snackbar

@@ -19,7 +19,7 @@
     </androidx.viewpager.widget.ViewPager>
 
     <ImageView
-        android:id="@+id/ivnext"
+        android:id="@+id/iv_next"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/margin30"
         android:layout_marginEnd="@dimen/margin20"

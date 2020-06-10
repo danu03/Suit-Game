@@ -33,7 +33,6 @@
         tools:listitem="@layout/item_history" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_empty"
         android:layout_width="409dp"
         android:layout_height="611dp"
         android:layout_marginTop="20dp"

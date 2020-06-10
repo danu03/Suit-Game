@@ -3,13 +3,13 @@
     <item
         android:id="@+id/menu_battle"
         android:icon="@drawable/battle_icon_selector"
-        android:title="Battle" />
+        android:title="@string/battle" />
     <item
         android:id="@+id/menu_history"
         android:icon="@drawable/history_icon_selector"
-        android:title="History" />
+        android:title="@string/history1" />
     <item
         android:id="@+id/menu_profile"
         android:icon="@drawable/profile_icon_selector"
-        android:title="Profile" />
+        android:title="@string/profile1" />
 </menu>

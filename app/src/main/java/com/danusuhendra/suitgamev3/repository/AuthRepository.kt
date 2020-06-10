@@ -1,7 +1,6 @@
 package com.danusuhendra.suitgamev3.repository
 
 import com.danusuhendra.suitgamev3.data.network.ApiService
-import com.danusuhendra.suitgamev3.data.network.model.users.request.BodyLogin
 import com.danusuhendra.suitgamev3.data.network.model.users.response.ResponseAuthMe
 import com.danusuhendra.suitgamev3.data.network.model.users.response.ResponseUsers
 import com.danusuhendra.suitgamev3.utils.ErrorParser

@@ -3,14 +3,11 @@ package com.danusuhendra.suitgamev3.data.network
 import com.danusuhendra.suitgamev3.data.network.model.battle.request.BodyBattle
 import com.danusuhendra.suitgamev3.data.network.model.battle.response.ResponseGetBattle
 import com.danusuhendra.suitgamev3.data.network.model.battle.response.ResponsePostBattle
-import com.danusuhendra.suitgamev3.data.network.model.users.request.BodyLogin
-import com.danusuhendra.suitgamev3.data.network.model.users.request.BodyRegister
 import com.danusuhendra.suitgamev3.data.network.model.users.response.ResponseAuthMe
 import com.danusuhendra.suitgamev3.data.network.model.users.response.ResponseUsers
 import com.danusuhendra.suitgamev3.utils.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 

@@ -1,6 +1,5 @@
 package com.danusuhendra.suitgamev3.data.network
 
-import androidx.multidex.BuildConfig
 import com.danusuhendra.suitgamev3.utils.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

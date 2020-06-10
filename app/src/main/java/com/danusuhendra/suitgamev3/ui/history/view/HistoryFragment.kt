@@ -1,12 +1,13 @@
 package com.danusuhendra.suitgamev3.ui.history.view
 
 import android.content.Context
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.danusuhendra.suitgamev3.BaseApplication
 import com.danusuhendra.suitgamev3.R
@@ -14,9 +15,8 @@ import com.danusuhendra.suitgamev3.adapter.HistoryAdapter
 import com.danusuhendra.suitgamev3.data.network.model.battle.response.DataGetBattle
 import com.danusuhendra.suitgamev3.data.prefs.PreferenceHelper
 import com.danusuhendra.suitgamev3.ui.history.presenter.HistoryPresenter
-import com.google.android.material.snackbar.Snackbar
+import com.danusuhendra.suitgamev3.ui.login.view.LoginActivity
 import kotlinx.android.synthetic.main.fragment_history.*
-import org.jetbrains.anko.contentView
 import javax.inject.Inject
 
 class HistoryFragment : Fragment(), HistoryView {
@@ -69,10 +69,12 @@ class HistoryFragment : Fragment(), HistoryView {
     }
 
     override fun showMessage(msg: String?) {
-        val snack = Snackbar.make(requireView(), msg.toString(), Snackbar.LENGTH_SHORT)
-            .setTextColor(Color.RED)
-        snack.view.setBackgroundColor(Color.WHITE)
-        snack.show()
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        preferenceHelper.token = ""
+        preferenceHelper.username = ""
+        preferenceHelper.userId = ""
+        startActivity(Intent(context, LoginActivity::class.java))
+        requireActivity().finish()
     }
 
     override fun hideLoading() {

@@ -1,5 +1,7 @@
 package com.danusuhendra.suitgamev3.ui.multiplayer.view
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +14,7 @@ import com.danusuhendra.suitgamev3.R
 import com.danusuhendra.suitgamev3.data.database.model.SaveBattle
 import com.danusuhendra.suitgamev3.data.prefs.PreferenceHelper
 import com.danusuhendra.suitgamev3.repository.SaveBattleRepository
+import com.danusuhendra.suitgamev3.ui.login.view.LoginActivity
 import com.danusuhendra.suitgamev3.ui.multiplayer.model.MultiPlayer
 import com.danusuhendra.suitgamev3.ui.multiplayer.presenter.MultiPlayerPresenter
 import kotlinx.android.synthetic.main.activity_multi_player.*
@@ -42,6 +45,7 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
     private var player1 = 0
     private var player2 = 0
 
+    //DI dagger
     @Inject
     lateinit var presenter: MultiPlayerPresenter
 
@@ -141,6 +145,7 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun reset() {
         val bgReset =
             listOf(iv_batu1, iv_batu2, iv_gunting1, iv_gunting2, iv_kertas1, iv_kertas2, iv_win)
@@ -163,7 +168,7 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
         val sdf = SimpleDateFormat("MM/dd/yyyy", Locale(localClassName))
         val date = sdf.format(Date())
         val saveBattle = SaveBattle(
-            null, userId, date, "Multi Player" ,iv_win.text.toString().replace(Regex("\n"), " ")
+            null, userId, date, "Multi Player", iv_win.text.toString().replace(Regex("\n"), " ")
         )
         GlobalScope.launch(Dispatchers.Main) {
             saveBattleRepository.insertSaveBattle(saveBattle)
@@ -178,6 +183,15 @@ class MultiPlayerActivity : AppCompatActivity(), MultiPlayerView {
 
     override fun postResult(result: String) {
         presenter.postBattle(result, token)
+    }
+
+    override fun tokenExpired(msg: String?) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        preferenceHelper.token = ""
+        preferenceHelper.username = ""
+        preferenceHelper.userId = ""
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -1,17 +1,14 @@
 <resources>
     <string name="app_name">Suit Game</string>
     <string name="pemain_1">Pemain 1</string>
-    <string name="computer">COM</string>
     <string name="batu">Batu</string>
     <string name="kertas">Kertas</string>
     <string name="gunting">Gunting</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_landing1">Bermain suit melawan sesama \npemain.</string>
     <string name="text_landing2">Bermain suit melawan komputer</string>
     <string name="text_landing3">Persiapkan dirimu!</string>
-    <string name="pemain_2">Pemain 2</string>
     <string name="cpu">CPU</string>
     <string name="password"> Password</string>
     <string name="email">Email</string>
@@ -22,7 +19,6 @@
     <string name="vs_cpu">vs CPU</string>
     <string name="username">Username</string>
     <string name="history">HISTORY BATTLE</string>
-    <string name="profile">DATA PROFILE</string>
     <string name="register">Register</string>
     <string name="save_battle">SAVE BATTLE</string>
     <string name="empty_data">Data Masih Kosong</string>
@@ -36,4 +32,12 @@
     <string name="vs">VS</string>
     <string name="edit_data_profile">Edit Data Profile</string>
     <string name="peringatan">Peringatan</string>
+    <string name="belum_punya_akun_daftar">Belum punya akun ? Daftar</string>
+    <string name="here">di sini</string>
+    <string name="register_account">DAFTARKAN AKUNMU</string>
+    <string name="have_account">Sudah punya akun ?</string>
+    <string name="battle">Battle</string>
+    <string name="history1">History</string>
+    <string name="profile1">Profile</string>
+    <string name="fix_data">Data sudah fix diupdate ?</string>
 </resources>

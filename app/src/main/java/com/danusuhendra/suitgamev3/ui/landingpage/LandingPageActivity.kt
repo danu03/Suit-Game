@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_landing_page.*
 
 class LandingPageActivity : AppCompatActivity() {
     var indexPage = 0
-    private lateinit var preferenceHelper: PreferenceHelper
+    private lateinit var preferenceHelper : PreferenceHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
@@ -23,8 +23,8 @@ class LandingPageActivity : AppCompatActivity() {
         view_pager.adapter = adapter
         dots_indicator.setViewPager(view_pager)
 
-        ivnext.visibility = View.GONE
-        view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+        iv_next.visibility = View.GONE
+        view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
 
             }
@@ -40,14 +40,14 @@ class LandingPageActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 indexPage = position
                 if (indexPage > 0) {
-                    ivnext.visibility = View.VISIBLE
+                    iv_next.visibility = View.VISIBLE
                 }
             }
         })
-        ivnext.setOnClickListener {
-            if (indexPage == 1){
+        iv_next.setOnClickListener {
+            if (indexPage == 1) {
                 view_pager.currentItem = indexPage + 1
-            } else if (indexPage == 2){
+            } else if (indexPage == 2) {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }

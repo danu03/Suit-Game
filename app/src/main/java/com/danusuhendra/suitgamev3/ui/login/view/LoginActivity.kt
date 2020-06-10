@@ -25,6 +25,7 @@ import javax.inject.Inject
 class LoginActivity : AppCompatActivity(), LoginView {
     @Inject
     lateinit var presenter: LoginPresenter
+
     @Inject
     lateinit var preferenceHelper: PreferenceHelper
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +82,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun onError(it: String?) {
-        Log.d("Login", it)
+        Log.d("Login", it.toString())
         val snack = Snackbar.make(contentView!!, it.toString(), Snackbar.LENGTH_SHORT)
             .setTextColor(Color.RED)
         snack.view.setBackgroundColor(Color.WHITE)

@@ -3,7 +3,6 @@ package com.danusuhendra.suitgamev3.ui.profile.view
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import com.danusuhendra.suitgamev3.ui.editprofile.view.EditProfileActivity
 import com.danusuhendra.suitgamev3.ui.login.view.LoginActivity
 import com.danusuhendra.suitgamev3.ui.profile.presenter.ProfilePresenter
 import kotlinx.android.synthetic.main.fragment_profile.*
-import org.jetbrains.anko.image
 import javax.inject.Inject
 
 class ProfileFragment : Fragment(), ProfileView {
@@ -62,11 +60,11 @@ class ProfileFragment : Fragment(), ProfileView {
     }
 
     override fun getProfile(email: String, username: String, photo: String) {
-        edt_email.text = email
-        edt_username.text = username
+        tv_email.text = email
+        tv_username.text = username
         Glide.with(this)
             .load(photo)
-            .placeholder(R.drawable.blankprofile)
+            .placeholder(R.drawable.blank_profile)
             .into(iv_profile)
     }
 

@@ -2,11 +2,11 @@ package com.danusuhendra.suitgamev3.ui.splashscreen.view
 
 import android.content.Intent
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.danusuhendra.suitgamev3.BaseApplication
 import com.danusuhendra.suitgamev3.R
 import com.danusuhendra.suitgamev3.data.network.model.users.response.ResponseAuthMe
@@ -14,7 +14,6 @@ import com.danusuhendra.suitgamev3.data.prefs.PreferenceHelper
 import com.danusuhendra.suitgamev3.ui.MainActivity
 import com.danusuhendra.suitgamev3.ui.landingpage.LandingPageActivity
 import com.danusuhendra.suitgamev3.ui.splashscreen.presenter.SplashScreenPresenter
-import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenView {

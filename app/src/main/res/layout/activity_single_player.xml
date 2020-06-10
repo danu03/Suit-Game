@@ -142,7 +142,7 @@
         android:paddingLeft="5dp"
         android:fontFamily="@font/comicbd"
         android:rotation="-20"
-        android:text="VS"
+        android:text="@string/vs"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="50sp"

@@ -7,4 +7,5 @@ interface SinglePlayerView {
     fun getSaveBattle(userId : String)
     fun deleteSaveBattle(userId: String)
     fun postResult(result: String)
+    fun tokenExpired(msg : String?)
 }

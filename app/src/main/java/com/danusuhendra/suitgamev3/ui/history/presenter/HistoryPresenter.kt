@@ -1,6 +1,5 @@
 package com.danusuhendra.suitgamev3.ui.history.presenter
 
-import com.danusuhendra.suitgamev3.data.network.ApiService
 import com.danusuhendra.suitgamev3.repository.BattleRepository
 import com.danusuhendra.suitgamev3.ui.history.view.HistoryView
 import kotlinx.coroutines.Dispatchers

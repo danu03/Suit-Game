@@ -23,13 +23,17 @@ class ProfileRepository(private val apiService: ApiService) {
 
     suspend fun editProfile(token: String, username : RequestBody, email : RequestBody, file : MultipartBody.Part, onSuccess : (ResponseUsers) -> Unit, onError: (String) -> Unit, tokenExpired : (String) -> Unit) {
         val response = apiService.updateUser(token, username, email, file)
-        if (response.isSuccessful) {
-            onSuccess(response.body()!!)
-        }else if(response.code() == 403){
-            tokenExpired("Session Timeout, Please Login Again")
-        }else{
-            val errorBody = ErrorParser.errorLogin(response)
-            onError(errorBody?.errors!!)
+        when {
+            response.isSuccessful -> {
+                onSuccess(response.body()!!)
+            }
+            response.code() == 403 -> {
+                tokenExpired("Session Timeout, Please Login Again")
+            }
+            else -> {
+                val errorBody = ErrorParser.errorLogin(response)
+                onError(errorBody?.errors!!)
+            }
         }
     }
 }

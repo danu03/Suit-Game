@@ -1,25 +1,18 @@
 package com.danusuhendra.suitgamev3.ui.singleplayer.presenter
 
-import android.icu.util.LocaleData
 import android.util.Log
 import com.danusuhendra.suitgamev3.R
-import com.danusuhendra.suitgamev3.data.database.model.SaveBattle
 import com.danusuhendra.suitgamev3.data.network.model.battle.request.BodyBattle
 import com.danusuhendra.suitgamev3.repository.BattleRepository
-import com.danusuhendra.suitgamev3.repository.SaveBattleRepository
 import com.danusuhendra.suitgamev3.ui.singleplayer.model.SinglePlayer
 import com.danusuhendra.suitgamev3.ui.singleplayer.view.SinglePlayerView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.ZoneId
-import java.util.*
 
 class SinglePlayerPresenter(private val repository: BattleRepository) : SinglePlayerPresenterInterface{
     private lateinit var view: SinglePlayerView
-    private val playerChoose = mutableListOf<Int>(
+    private val playerChoose = mutableListOf(
         R.id.iv_batu1,
         R.id.iv_gunting1,
         R.id.iv_kertas1,
@@ -62,7 +55,9 @@ class SinglePlayerPresenter(private val repository: BattleRepository) : SinglePl
         GlobalScope.launch(Dispatchers.Main) {
             val mode = "Singleplayer"
             val battle = BodyBattle(mode, result)
-            repository.postBattle(battle, token)
+            repository.postBattle(battle, token) {
+                view.tokenExpired(it)
+            }
         }
     }
 

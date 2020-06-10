@@ -10,17 +10,6 @@ class PreferenceHelper(context: Context) {
             PREF_NAME, PRIVATE_MODE
         )
 
-    var isLogin: Boolean
-        get() {
-            return sharedPreferences.getBoolean(STATUS, false)
-        }
-        set(value) {
-            sharedPreferences.edit().apply {
-                putBoolean(STATUS, value)
-                apply()
-            }
-        }
-
     var username: String?
         get() {
             return sharedPreferences.getString(USERNAME, "")

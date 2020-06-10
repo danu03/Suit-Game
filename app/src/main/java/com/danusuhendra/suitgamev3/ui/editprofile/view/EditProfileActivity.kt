@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.bumptech.glide.Glide
-import com.bumptech.glide.RequestBuilder
 import com.danusuhendra.suitgamev3.BaseApplication
 import com.danusuhendra.suitgamev3.R
 import com.danusuhendra.suitgamev3.data.prefs.PreferenceHelper
@@ -19,11 +17,9 @@ import com.danusuhendra.suitgamev3.ui.login.view.LoginActivity
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_edit_profile.*
-import kotlinx.android.synthetic.main.activity_edit_profile.edt_email
-import kotlinx.android.synthetic.main.activity_edit_profile.edt_username
 import kotlinx.android.synthetic.main.activity_edit_profile.iv_profile
 import kotlinx.android.synthetic.main.activity_edit_profile.view.*
-import kotlinx.android.synthetic.main.fragment_profile.*
+import org.jetbrains.anko.email
 import javax.inject.Inject
 
 class EditProfileActivity : AppCompatActivity(), EditProfileView{
@@ -64,7 +60,7 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
 
         btn_save.setOnClickListener {
             if (fileUri == null){
-                Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Photo must be filled in", Toast.LENGTH_SHORT).show()
             }else{
                 showDialogEditValidation()
             }
@@ -99,8 +95,8 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
 
             builder.setView(view)
             builder.setPositiveButton("UPDATE") { _, _ ->
-                val email = view.edt_email.text.toString()
-                edt_email.text = email
+                val email = view.tv_email.text.toString()
+                tv_email.text = email
             }
             builder.setNegativeButton("BATAL") { dialog, _ ->
                 dialog.cancel()
@@ -116,9 +112,9 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
             val view = layoutInflater.inflate(R.layout.update_dialog_username, null)
 
             builder.setView(view)
-            builder.setPositiveButton("UPDATE") { _, _ ->
-                val username = view.edt_username.text.toString()
-                edt_username.text = username
+            builder.setPositiveButton("OK") { _, _ ->
+                val username = view.tv_username.text.toString()
+                tv_username.text = username
             }
             builder.setNegativeButton("BATAL") { dialog, _ ->
                 dialog.cancel()
@@ -134,9 +130,9 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
             val view = layoutInflater.inflate(R.layout.update_dialog_validation, null)
 
             builder.setView(view)
-            builder.setPositiveButton("UPDATE") { _, _ ->
-                val email = edt_email.text.toString()
-                val username = edt_username.text.toString()
+            builder.setPositiveButton("OK") { _, _ ->
+                val email = tv_email.text.toString()
+                val username = tv_username.text.toString()
                 presenter.updateDataProfile(preferenceHelper.token!!, username, email, fileUri)
             }
             builder.setNegativeButton("BATAL") { dialog, _ ->
@@ -148,20 +144,20 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
     }
 
     override fun getProfile(email: String, username: String, photo: String) {
-        edt_email.text = email
-        edt_username.text = username
+        tv_email.text = email
+        tv_username.text = username
         Glide.with(this)
             .load(photo)
-            .placeholder(R.drawable.blankprofile)
+            .placeholder(R.drawable.blank_profile)
             .into(iv_profile)
     }
 
     override fun updateProfile(email: String, username: String, photo: String) {
-        edt_email.text = email
-        edt_username.text = username
+        tv_email.text = email
+        tv_username.text = username
         Glide.with(this)
             .load(photo)
-            .placeholder(R.drawable.blankprofile)
+            .placeholder(R.drawable.blank_profile)
             .into(iv_profile)
         preferenceHelper.username = username
     }

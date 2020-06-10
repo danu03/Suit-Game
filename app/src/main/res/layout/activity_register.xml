@@ -20,7 +20,9 @@
         android:paddingStart="@dimen/padding8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/edt_email"
@@ -35,7 +37,9 @@
         android:paddingStart="@dimen/padding8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/edt_password"
@@ -50,7 +54,9 @@
         android:paddingStart="@dimen/padding8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView6"
@@ -141,7 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin10"
         android:fontFamily="@font/comicbd"
-        android:text="DAFTARKAN AKUNMU"
+        android:text="@string/register_account"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,7 +171,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
-        android:text="Sudah punya akun ? "
+        android:text="@string/have_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
