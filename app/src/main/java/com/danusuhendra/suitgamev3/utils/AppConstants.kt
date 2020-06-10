@@ -4,7 +4,6 @@ const val PREF_NAME = "suit-pref"
 const val PRIVATE_MODE = 0
 const val USER_ID = "user_id"
 const val USERNAME = "username"
-const val STATUS = "status"
 const val TOKEN = "token"
 
 const val BASE_URL = "https://binar-gdd-cc8.herokuapp.com/"

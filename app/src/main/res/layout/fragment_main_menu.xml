@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin80"
         android:fontFamily="@font/comicbd"
-        android:text="@string/pilih_lawanmu"
+        android:text="@string/choose_your_opponent"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -28,7 +28,7 @@
         android:textSize="@dimen/text_size"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:text="@string/vs_pemain"
+        android:text="@string/versus_player"
         app:layout_constraintEnd_toEndOf="@+id/image_vs_player"
         app:layout_constraintStart_toStartOf="@+id/image_vs_player"
         app:layout_constraintTop_toBottomOf="@+id/image_vs_player" />
@@ -54,7 +54,8 @@
         android:layout_marginTop="@dimen/margin30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_profile"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/image_vs_comp"
@@ -63,7 +64,8 @@
         android:layout_marginTop="@dimen/margin50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_vs_player" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_vs_player"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/iv_more"
@@ -73,6 +75,7 @@
         android:layout_marginEnd="@dimen/margin8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+        app:srcCompat="@drawable/ic_baseline_more_vert_24"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

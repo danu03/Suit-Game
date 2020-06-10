@@ -129,7 +129,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tittle" />
+        app:srcCompat="@drawable/tittle"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/img_show"
@@ -139,7 +140,8 @@
         android:layout_marginEnd="@dimen/margin10"
         app:layout_constraintEnd_toEndOf="@+id/edt_password"
         app:layout_constraintTop_toTopOf="@+id/edt_password"
-        app:srcCompat="@drawable/ic_visibility_off_black_24dp" />
+        app:srcCompat="@drawable/ic_visibility_off_black_24dp"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView7"

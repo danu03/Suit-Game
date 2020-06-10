@@ -101,7 +101,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tittle" />
+        app:srcCompat="@drawable/tittle"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/img_show"
@@ -111,7 +112,8 @@
         android:layout_marginEnd="@dimen/margin10"
         app:layout_constraintEnd_toEndOf="@+id/edt_password"
         app:layout_constraintTop_toTopOf="@+id/edt_password"
-        app:srcCompat="@drawable/ic_visibility_off_black_24dp" />
+        app:srcCompat="@drawable/ic_visibility_off_black_24dp"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView4"
@@ -119,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/belum_punya_akun_daftar"
+        android:text="@string/do_not_have_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -140,11 +142,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/comicbd"
-        android:text="LOGIN"
+        android:text="@string/login1"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:ignore="HardcodedText" />
 
     <ProgressBar
         android:id="@+id/pb_login"

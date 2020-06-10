@@ -4,10 +4,10 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.danusuhendra.suitgamev3.BaseApplication
 import com.danusuhendra.suitgamev3.R
@@ -17,9 +17,15 @@ import com.danusuhendra.suitgamev3.ui.login.view.LoginActivity
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import kotlinx.android.synthetic.main.activity_edit_profile.*
-import kotlinx.android.synthetic.main.activity_edit_profile.iv_profile
+import kotlinx.android.synthetic.main.activity_edit_profile.tv_email
+import kotlinx.android.synthetic.main.activity_edit_profile.tv_username
 import kotlinx.android.synthetic.main.activity_edit_profile.view.*
-import org.jetbrains.anko.email
+import kotlinx.android.synthetic.main.activity_edit_profile.view.tv_email
+import kotlinx.android.synthetic.main.activity_edit_profile.view.tv_username
+import kotlinx.android.synthetic.main.update_dialog_email.*
+import kotlinx.android.synthetic.main.update_dialog_email.view.*
+import kotlinx.android.synthetic.main.update_dialog_username.*
+import kotlinx.android.synthetic.main.update_dialog_username.view.*
 import javax.inject.Inject
 
 class EditProfileActivity : AppCompatActivity(), EditProfileView{
@@ -94,8 +100,8 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
             val view = layoutInflater.inflate(R.layout.update_dialog_email, null)
 
             builder.setView(view)
-            builder.setPositiveButton("UPDATE") { _, _ ->
-                val email = view.tv_email.text.toString()
+            builder.setPositiveButton("OK") { _, _ ->
+                val email = view.edt_email_dialog.text.toString()
                 tv_email.text = email
             }
             builder.setNegativeButton("BATAL") { dialog, _ ->
@@ -113,7 +119,7 @@ class EditProfileActivity : AppCompatActivity(), EditProfileView{
 
             builder.setView(view)
             builder.setPositiveButton("OK") { _, _ ->
-                val username = view.tv_username.text.toString()
+                val username = view.edt_username_dialog.text.toString()
                 tv_username.text = username
             }
             builder.setNegativeButton("BATAL") { dialog, _ ->

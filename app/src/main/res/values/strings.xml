@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Suit Game</string>
-    <string name="pemain_1">Pemain 1</string>
+    <string name="player_1">Pemain 1</string>
     <string name="batu">Batu</string>
-    <string name="kertas">Kertas</string>
-    <string name="gunting">Gunting</string>
+    <string name="paper">Kertas</string>
+    <string name="scissor">Gunting</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="text_landing1">Bermain suit melawan sesama \npemain.</string>
@@ -14,8 +14,8 @@
     <string name="email">Email</string>
     <string name="reset">Reset</string>
     <string name="login">Login</string>
-    <string name="pilih_lawanmu">PILIH LAWANMU</string>
-    <string name="vs_pemain">vs Pemain</string>
+    <string name="choose_your_opponent">PILIH LAWANMU</string>
+    <string name="versus_player">vs Pemain</string>
     <string name="vs_cpu">vs CPU</string>
     <string name="username">Username</string>
     <string name="history">HISTORY BATTLE</string>
@@ -31,8 +31,8 @@
     <string name="player_2">Player 2</string>
     <string name="vs">VS</string>
     <string name="edit_data_profile">Edit Data Profile</string>
-    <string name="peringatan">Peringatan</string>
-    <string name="belum_punya_akun_daftar">Belum punya akun ? Daftar</string>
+    <string name="warning">Peringatan</string>
+    <string name="do_not_have_account">Belum punya akun ? Daftar</string>
     <string name="here">di sini</string>
     <string name="register_account">DAFTARKAN AKUNMU</string>
     <string name="have_account">Sudah punya akun ?</string>
@@ -40,4 +40,11 @@
     <string name="history1">History</string>
     <string name="profile1">Profile</string>
     <string name="fix_data">Data sudah fix diupdate ?</string>
+    <string name="login1">LOGIN</string>
+    <string name="mode">Mode :</string>
+    <string name="result">Hasil :</string>
+    <string name="todo">TODO</string>
+    <string name="date">Tanggal :</string>
+    <string name="player_win">Danu Menang!</string>
+    <string name="delete">HAPUS</string>
 </resources>

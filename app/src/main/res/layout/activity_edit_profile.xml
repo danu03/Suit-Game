@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/baseColor"
-    tools:context=".ui.editprofile.view.EditProfileActivity">
+    tools:context=".ui.editprofile.view.EditProfileActivity"
+    tools:ignore="Overdraw">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profile"
@@ -125,7 +126,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_email"
         app:layout_constraintEnd_toEndOf="@+id/tv_email"
         app:layout_constraintTop_toTopOf="@+id/tv_email"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        android:contentDescription="@string/todo"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/iv_edit_username"
@@ -135,6 +138,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_username"
         app:layout_constraintEnd_toEndOf="@+id/tv_username"
         app:layout_constraintTop_toTopOf="@+id/tv_username"
-        app:srcCompat="@drawable/ic_baseline_edit_24" />
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

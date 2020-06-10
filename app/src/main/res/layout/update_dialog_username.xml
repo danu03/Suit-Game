@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edt_username"
+        android:id="@+id/edt_username_dialog"
         android:layout_width="0dp"
         android:layout_height="@dimen/layout40"
         android:layout_marginTop="@dimen/margin5"
@@ -44,7 +44,7 @@
         android:layout_marginTop="@dimen/margin20"
         android:text="@string/username"
         android:textColor="@color/textColor"
-        app:layout_constraintStart_toStartOf="@+id/edt_username"
+        app:layout_constraintStart_toStartOf="@+id/edt_username_dialog"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
